@@ -1,0 +1,5 @@
+# VS Code / Runner temp files
+tempCodeRunnerFile.py
+*.pyc
+__pycache__/
+.vscode/
