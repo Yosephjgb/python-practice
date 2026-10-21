@@ -282,214 +282,310 @@
 # print("The list with unique elements only:")
 # print(my_list)
 
-temps = [[0.0 for h in range(24)] for d in range(31)]
-#
-# The matrix is magically updated here.
-#
+# temps = [[0.0 for h in range(24)] for d in range(31)]
+# #
+# # The matrix is magically updated here.
+# #
 
-hot_days = 0
+# hot_days = 0
 
-for day in temps:
-    if day[11] > 20.0:
-        hot_days += 1
+# for day in temps:
+#     if day[11] > 20.0:
+#         hot_days += 1
 
-print(hot_days, "days were hot.")
+# print(hot_days, "days were hot.")
 
-# Cube - a three-dimensional array (3x3x3)
+# # Cube - a three-dimensional array (3x3x3)
 
-cube = [[[':(', 'x', 'x'],
-         [':)', 'x', 'x'],
-         [':(', 'x', 'x']],
+# cube = [[[':(', 'x', 'x'],
+#          [':)', 'x', 'x'],
+#          [':(', 'x', 'x']],
 
-        [[':)', 'x', 'x'],
-         [':(', 'x', 'x'],
-         [':)', 'x', 'x']],
+#         [[':)', 'x', 'x'],
+#          [':(', 'x', 'x'],
+#          [':)', 'x', 'x']],
 
-        [[':(', 'x', 'x'],
-         [':)', 'x', 'x'],
-         [':)', 'x', 'x']]]
+#         [[':(', 'x', 'x'],
+#          [':)', 'x', 'x'],
+#          [':)', 'x', 'x']]]
 
-print(cube)
-print(cube[0][0][0])  # outputs: ':('
-print(cube[2][2][0])  # outputs: ':)'
+# print(cube)
+# print(cube[0][0][0])  # outputs: ':('
+# print(cube[2][2][0])  # outputs: ':)'
 
-my_list = [1, 2, 3]
-for v in range(len(my_list)):
-    my_list.insert(1, my_list[v])
-print(my_list)
+# my_list = [1, 2, 3]
+# for v in range(len(my_list)):
+#     my_list.insert(1, my_list[v])
+# print(my_list)
 
-t = [[3-i for i in range (3)] for j in range (3)]
-s = 0
-for i in range(3):
-    s += t[i][i]
-print(s)
+# t = [[3-i for i in range (3)] for j in range (3)]
+# s = 0
+# for i in range(3):
+#     s += t[i][i]
+# print(s)
 
 
-def strange_list_fun(n):
-    strange_list = []
+# def strange_list_fun(n):
+#     strange_list = []
     
-    for i in range(0, n):
-        strange_list.insert(0, i)
+#     for i in range(0, n):
+#         strange_list.insert(0, i)
     
-    return strange_list
+#     return strange_list
 
-print(strange_list_fun(5))
+# print(strange_list_fun(5))
 
-def is_year_leap(year):
-    #
-    # Write your code here.
-    #
-    if year % 400 == 0:
-        return True
-    if year % 100 == 0:
-        return False
-    if year % 4  == 0:
-        return True
-    return False
+# def is_year_leap(year):
+#     #
+#     # Write your code here.
+#     #
+#     if year % 400 == 0:
+#         return True
+#     if year % 100 == 0:
+#         return False
+#     if year % 4  == 0:
+#         return True
+#     return False
 
-def days_in_month(year, month):
-    #
-    # Write your new code here.
-    #
-    if month < 1 or month > 12:
-        return None
+# def days_in_month(year, month):
+#     #
+#     # Write your new code here.
+#     #
+#     if month < 1 or month > 12:
+#         return None
     
-    if month == 2:
-        if is_year_leap(year):
-            return 29
-        return 28
-    if month in (1,3,5,7,8,10,12):
-        return 31
-    else:
-        return 30
+#     if month == 2:
+#         if is_year_leap(year):
+#             return 29
+#         return 28
+#     if month in (1,3,5,7,8,10,12):
+#         return 31
+#     else:
+#         return 30
 
-test_years = [1900, 2000, 2016, 1987]
-test_months = [2, 2, 1, 11]
-test_results = [28, 29, 31, 30]
-for i in range(len(test_years)):
-    yr = test_years[i]
-    mo = test_months[i]
-    print(yr, mo, "->", end="")
-    result = days_in_month(yr, mo)
-    if result == test_results[i]:
-        print("OK")
-    else:
-        print("Failed")
+# test_years = [1900, 2000, 2016, 1987]
+# test_months = [2, 2, 1, 11]
+# test_results = [28, 29, 31, 30]
+# for i in range(len(test_years)):
+#     yr = test_years[i]
+#     mo = test_months[i]
+#     print(yr, mo, "->", end="")
+#     result = days_in_month(yr, mo)
+#     if result == test_results[i]:
+#         print("OK")
+#     else:
+#         print("Failed")
 
-def day_of_year(year, month, day):
-    # Check whether the month is valid
-    month_days = days_in_month(year, month)
-    if month_days is None:
+# def day_of_year(year, month, day):
+#     # Check whether the month is valid
+#     month_days = days_in_month(year, month)
+#     if month_days is None:
+#         return None
+
+#     # Check whether the day is valid
+#     if day < 1 or day > month_days:
+#         return None
+
+#     # Start with the current day
+#     day_number = day
+
+#     # Add the days in previous months
+#     for m in range(1, month):
+#         day_number += days_in_month(year, m)
+
+#     return day_number
+
+
+# print(day_of_year(2000, 12, 31))  # 366
+
+
+# def is_prime(num):
+#     # the for loop
+#     for i in range(2,num):
+#         # the if statement
+#         if num % i == 0:
+#             return False
+#     return True
+
+# for i in range(1, 20):
+#     if is_prime(i + 1):
+#         print(i + 1, end=" ")
+# print()
+
+
+# def is_prime(num):
+#     for i in range(2, int(1 + num ** 0.5)):
+#         if num % i == 0:
+#             return False
+#     return True
+
+# for i in range(1, 20):
+#     if is_prime(i + 1):
+#         print(i + 1, end=" ")
+# print()
+
+
+# def liters_100km_to_miles_gallon(liters):
+#     #
+#     # Write your code here.
+#     #
+#     return 235.214583 / liters
+
+# def miles_gallon_to_liters_100km(miles):
+#     #
+#     # Write your code here.
+#     #
+#     return 235.214583 / miles
+
+# print(liters_100km_to_miles_gallon(3.9))
+# print(liters_100km_to_miles_gallon(7.5))
+# print(liters_100km_to_miles_gallon(10.))
+# print(miles_gallon_to_liters_100km(60.3))
+# print(miles_gallon_to_liters_100km(31.4))
+# print(miles_gallon_to_liters_100km(23.5))
+
+# def hi_everybody(my_list):
+#     for name in my_list:
+#         print("Hi,", name)
+
+# hi_everybody(["Adam", "John", "Lucy"])
+
+# def create_list(n):
+#     my_list = []
+#     for i in range(n):
+#         my_list.append(i)
+#     return my_list
+
+# print(create_list(5))
+
+# def hi():
+#     return
+#     print("Hi!")
+
+# hi()
+
+# def is_int(data):
+#     if type(data) == int:
+#         return True
+#     elif type(data) == float:
+#         return False
+
+# print(is_int(5))
+# print(is_int(5.0))
+# print(is_int("5"))
+
+# def even_num_lst(ran):
+#     lst = []
+#     for num in range(ran):
+#         if num % 2 == 0:
+#             lst.append(num)
+#     return lst
+
+# print(even_num_lst(11))
+
+# def list_updater(lst):
+#     upd_list = []
+#     for elem in lst:
+#         elem **= 2
+#         upd_list.append(elem)
+#     return upd_list
+
+# foo = [1, 2, 3, 4, 5]
+# print(list_updater(foo))
+
+# def ft_and_inch_to_m(ft, inch = 0.0):
+#     return ft * 0.3048 + inch * 0.0254
+
+
+# def lb_to_kg(lb):
+#     return lb * 0.4535923
+
+
+# def bmi(weight, height):
+#     if height < 1.0 or height > 2.5 or weight < 20 or weight > 200:
+#         return None
+
+#     return weight / height ** 2
+
+
+# print(bmi(weight = lb_to_kg(176), height = ft_and_inch_to_m(5, 7)))
+
+
+
+# # We've negated the condition (reversed the relational operators and
+# # replaced ors with ands, receiving a universal expression for testing triangles).
+# def is_a_triangle(a, b, c):
+#     return a + b > c and b + c > a and c + a > b
+
+
+# print(is_a_triangle(1, 1, 1))
+# print(is_a_triangle(1, 1, 3))
+
+# # Triangles and the Pythagorean theorem
+# def is_a_triangle(a, b, c):
+#     return a + b > c and b + c > a and c + a > b
+
+
+# a = float(input('Enter the first side\'s length: '))
+# b = float(input('Enter the second side\'s length: '))
+# c = float(input('Enter the third side\'s length: '))
+
+# if is_a_triangle(a, b, c):
+#     print('Yes, it can be a triangle.')
+# else:
+#     print('No, it can\'t be a triangle.')
+
+
+#factorial function
+
+from itertools import product
+
+
+def factorial(n):
+    if n < 0:
         return None
+    if n < 2:
+        return 1
 
-    # Check whether the day is valid
-    if day < 1 or day > month_days:
+    product = 1
+    for i in range(2, n + 1):
+        product *= i
+
+    return product
+     
+for n in range(1, 6):
+    print(n, factorial(n))
+    
+# Fibonacci numbers function
+def fib(n):
+    if n < 1:
         return None
+    if n < 3:
+        return 1
 
-    # Start with the current day
-    day_number = day
-
-    # Add the days in previous months
-    for m in range(1, month):
-        day_number += days_in_month(year, m)
-
-    return day_number
-
-
-print(day_of_year(2000, 12, 31))  # 366
+    elem_1 = elem_2 = 1
+    the_sum = 0
+    for i in range(3, n + 1):
+        the_sum = elem_1 + elem_2
+        elem_1, elem_2 = elem_2, the_sum
+    return the_sum
 
 
-def is_prime(num):
-    # the for loop
-    for i in range(2,num):
-        # the if statement
-        if num % i == 0:
-            return False
-    return True
+for n in range(1, 10):  # testing
+    print(n, "->", fib(n))
 
-for i in range(1, 20):
-    if is_prime(i + 1):
-        print(i + 1, end=" ")
-print()
+#recusrion on fibonacci and factorial functions
+def fib(n):
+    if n < 1:
+        return None
+    if n < 3:
+        return 1
+    return fib(n - 1) + fib(n - 2)
 
-
-def is_prime(num):
-    for i in range(2, int(1 + num ** 0.5)):
-        if num % i == 0:
-            return False
-    return True
-
-for i in range(1, 20):
-    if is_prime(i + 1):
-        print(i + 1, end=" ")
-print()
-
-
-def liters_100km_to_miles_gallon(liters):
-    #
-    # Write your code here.
-    #
-    return 235.214583 / liters
-
-def miles_gallon_to_liters_100km(miles):
-    #
-    # Write your code here.
-    #
-    return 235.214583 / miles
-
-print(liters_100km_to_miles_gallon(3.9))
-print(liters_100km_to_miles_gallon(7.5))
-print(liters_100km_to_miles_gallon(10.))
-print(miles_gallon_to_liters_100km(60.3))
-print(miles_gallon_to_liters_100km(31.4))
-print(miles_gallon_to_liters_100km(23.5))
-
-def hi_everybody(my_list):
-    for name in my_list:
-        print("Hi,", name)
-
-hi_everybody(["Adam", "John", "Lucy"])
-
-def create_list(n):
-    my_list = []
-    for i in range(n):
-        my_list.append(i)
-    return my_list
-
-print(create_list(5))
-
-def hi():
-    return
-    print("Hi!")
-
-hi()
-
-def is_int(data):
-    if type(data) == int:
-        return True
-    elif type(data) == float:
-        return False
-
-print(is_int(5))
-print(is_int(5.0))
-print(is_int("5"))
-
-def even_num_lst(ran):
-    lst = []
-    for num in range(ran):
-        if num % 2 == 0:
-            lst.append(num)
-    return lst
-
-print(even_num_lst(11))
-
-def list_updater(lst):
-    upd_list = []
-    for elem in lst:
-        elem **= 2
-        upd_list.append(elem)
-    return upd_list
-
-foo = [1, 2, 3, 4, 5]
-print(list_updater(foo))
+def factorial_function(n):
+    if n < 0:
+        return None
+    if n < 2:
+        return 1
+    return n * factorial_function(n - 1)
 
