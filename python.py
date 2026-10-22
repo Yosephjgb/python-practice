@@ -536,56 +536,174 @@
 #     print('No, it can\'t be a triangle.')
 
 
-#factorial function
+# #factorial function
 
-from itertools import product
+# from itertools import product
 
 
-def factorial(n):
-    if n < 0:
-        return None
-    if n < 2:
-        return 1
+# def factorial(n):
+#     if n < 0:
+#         return None
+#     if n < 2:
+#         return 1
 
-    product = 1
-    for i in range(2, n + 1):
-        product *= i
+#     product = 1
+#     for i in range(2, n + 1):
+#         product *= i
 
-    return product
+#     return product
      
-for n in range(1, 6):
-    print(n, factorial(n))
+# for n in range(1, 6):
+#     print(n, factorial(n))
     
-# Fibonacci numbers function
-def fib(n):
-    if n < 1:
-        return None
-    if n < 3:
-        return 1
+# # Fibonacci numbers function
+# def fib(n):
+#     if n < 1:
+#         return None
+#     if n < 3:
+#         return 1
 
-    elem_1 = elem_2 = 1
-    the_sum = 0
-    for i in range(3, n + 1):
-        the_sum = elem_1 + elem_2
-        elem_1, elem_2 = elem_2, the_sum
-    return the_sum
+#     elem_1 = elem_2 = 1
+#     the_sum = 0
+#     for i in range(3, n + 1):
+#         the_sum = elem_1 + elem_2
+#         elem_1, elem_2 = elem_2, the_sum
+#     return the_sum
 
 
-for n in range(1, 10):  # testing
-    print(n, "->", fib(n))
+# for n in range(1, 10):  # testing
+#     print(n, "->", fib(n))
 
-#recusrion on fibonacci and factorial functions
-def fib(n):
-    if n < 1:
-        return None
-    if n < 3:
-        return 1
-    return fib(n - 1) + fib(n - 2)
+# #recusrion on fibonacci and factorial functions
+# def fib(n):
+#     if n < 1:
+#         return None
+#     if n < 3:
+#         return 1
+#     return fib(n - 1) + fib(n - 2)
 
-def factorial_function(n):
-    if n < 0:
-        return None
-    if n < 2:
-        return 1
-    return n * factorial_function(n - 1)
+# def factorial_function(n):
+#     if n < 0:
+#         return None
+#     if n < 2:
+#         return 1
+#     return n * factorial_function(n - 1)
 
+
+#tuples
+
+empty_tuples = ()
+normal_tuples = (1, 2, 3)
+short_tuples = 1, 2, 3
+short_tuples_with_dot = 1.,
+not_tuples = 1.  # This is not a tuple, it's an integer
+print(empty_tuples)
+print(normal_tuples) 
+print(normal_tuples[0:-1])     
+print(short_tuples)
+print(short_tuples_with_dot)
+print(not_tuples)
+
+my_tuple = (1, 10, 100)
+
+t1 = my_tuple + (1000, 10000)
+t2 = my_tuple * 3
+
+print(len(t2))
+print(t1)
+print(t2)
+print(10 in my_tuple)
+print(-10 not in my_tuple)
+
+
+var = 123
+
+t1 = (1, )
+t2 = (2, )
+t3 = (3, var)
+
+t1, t2, t3 = t2, t3, t1
+
+print(t1, t2, t3)
+
+#dictionaries
+
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+
+for key in dictionary.keys():
+    print(key, "->", dictionary[key])
+
+#Let's now have a look at a dictionary method called items(). The method returns tuples (this is the first example where tuples 
+# are something more than just an example of themselves) where each tuple is a key-value pair.
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+
+for english, french in dictionary.items():
+    print(english, "->", french)
+
+for key in sorted(dictionary.keys()):
+    print(key, "->", dictionary[key])
+
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+
+for french in dictionary.values():
+    print(french)
+
+#Adding a new key
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+
+dictionary['swan'] = 'cygne'
+print(dictionary)
+
+#update() method
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+
+dictionary.update({"duck": "canard"})
+print(dictionary)
+
+#removing a key-value pair
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+
+del dictionary['dog']
+print(dictionary)
+
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+#using pop() method
+dictionary.popitem()
+print(dictionary)    # outputs: {'cat': 'chat', 'dog': 'chien'}
+
+#creating a tuples using tuple() constructor
+my_tuple = tuple((1, 2, "string"))
+print(my_tuple)
+
+my_list = [2, 4, 6]
+print(my_list)    # outputs: [2, 4, 6]
+print(type(my_list))    # outputs: <class 'list'>
+tup = tuple(my_list)
+print(tup)    # outputs: (2, 4, 6)
+print(type(tup))    # outputs: <class 'tuple'>
+
+tup = 1, 2, 3, 2, 4, 5, 6, 2, 7, 2, 8, 9
+duplicates = tup.count(2)
+
+print(duplicates)    # outputs: 4
+
+d1 = {'Adam Smith': 'A', 'Judy Paxton': 'B+'}
+d2 = {'Mary Louis': 'A', 'Patrick White': 'C'}
+d3 = {}
+#update() lets you merge dictionaries into one dictionary.
+for item in (d1, d2):
+    d3.update(item)
+
+print(d3)
+
+# my_list list to a tuple.
+my_list = ["car", "Ford", "flower", "Tulip"]
+
+t = tuple(my_list)
+print(t)
+
+#colors tuple to a dictionary
+colors = (("green", "#008000"), ("blue", "#0000FF"))
+
+colors_dictionary = dict(colors)
+print(colors_dictionary)
