@@ -3,3 +3,11 @@ tempCodeRunnerFile.py
 *.pyc
 __pycache__/
 .vscode/
+
+# Other project folders
+Ajax/
+Gaming-hub/
+MYPortfolio/
+MYPortfolio-main/
+Php/
+html/

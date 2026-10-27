@@ -707,3 +707,15 @@ colors = (("green", "#008000"), ("blue", "#0000FF"))
 
 colors_dictionary = dict(colors)
 print(colors_dictionary)
+
+
+#tricky function
+def fun(x):
+    if x % 2 == 0:
+        return 1
+    else:
+        return 2
+
+
+print(fun(fun(2)))
+
